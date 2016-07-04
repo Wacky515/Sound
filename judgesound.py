@@ -12,10 +12,10 @@
 # -------------------------------------------------------------------------------
 
 # モジュールインポート
-import winsound
-import time
-
 import sys
+import time
+import winsound
+
 # sysモジュール リロード
 reload(sys)
 
