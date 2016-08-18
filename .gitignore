@@ -1,0 +1,14 @@
+*.un~
+*.*~
+*.swp
+*.pyc
+*.swo
+*.sw*
+
+./
+old/
+!*.py
+!*.txt
+!*.md
+
+LogImage/
