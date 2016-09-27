@@ -14,7 +14,10 @@
 # モジュールインポート
 import sys
 import time
-import winsound
+
+import os
+if os.name == "nt":
+    import winsound
 
 # sysモジュール リロード
 reload(sys)
@@ -27,17 +30,26 @@ class JudgeSound:
     """ OK/NG判定音 出力 """
     def beep_ok(self):
         """ OK判定音 出力 """
-        winsound.Beep(2000, 1000)
-        print("OK!")
-        print("")
+        try:
+            winsound.Beep(2000, 1000)
+            print("OK!")
+            print("")
+        except:
+            print("Sound error")
+            print("")
+
 
     def beep_ng(self):
         """ NG判定音 出力 """
-        for times in range(2):
-            winsound.Beep(2000, 500)
-            time.sleep(0.1)
-        print("NG!")
-        print("")
+        try:
+            for times in range(2):
+                winsound.Beep(2000, 500)
+                time.sleep(0.1)
+            print("NG!")
+            print("")
+        except:
+            print("Sound error")
+            print("")
 
 
 def main():
