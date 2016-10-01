@@ -12,10 +12,10 @@
 # -------------------------------------------------------------------------------
 
 # モジュールインポート
+import os
 import sys
 import time
 
-import os
 if os.name == "nt":
     import winsound
 
@@ -31,24 +31,34 @@ class JudgeSound:
     def beep_ok(self):
         """ OK判定音 出力 """
         try:
-            winsound.Beep(2000, 1000)
+            if os.name == "nt":
+                winsound.Beep(2000, 1000)
+            elif sys.platform == "darwin":
+                os.system('say "OK"')
+            elif sys.platform == "linux2":
+                print("\a")
             print("OK!")
             print("")
         except:
-            print("Sound error")
+            print("Sound error(OK)")
             print("")
-
 
     def beep_ng(self):
         """ NG判定音 出力 """
         try:
-            for times in range(2):
-                winsound.Beep(2000, 500)
-                time.sleep(0.1)
+            if sys.platform != "darwin":
+                for times in range(2):
+                    if os.name == "nt":
+                        winsound.Beep(2000, 500)
+                    elif os.name == "posix":
+                        print("\a")
+                    time.sleep(0.1)
+            elif sys.platform == "darwin":
+                os.system('say "NG"')
             print("NG!")
             print("")
         except:
-            print("Sound error")
+            print("Sound error(Judgement NG)")
             print("")
 
 
