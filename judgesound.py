@@ -58,7 +58,7 @@ class JudgeSound:
             print("NG!")
             print("")
         except:
-            print("Sound error(Judgement NG)")
+            print("Sound error(NG)")
             print("")
 
 
