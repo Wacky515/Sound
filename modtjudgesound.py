@@ -1,16 +1,15 @@
-﻿#-------------------------------------------------------------------------------
-# Name:        ModuleTestJudgeSound
-# Purpose:
+﻿# !/usr/bin/python
+# -*- coding: utf-8 -*-
+# -----------------------------------------------------------------------------
+# Name:        modtjudgesound.py
+# Purpose:     In README.md
 #
 # Author:      Kilo11
 #
 # Created:     01/04/2016
 # Copyright:   (c) SkyDog 2016
-# Licence:     SDS10008-1
-#-------------------------------------------------------------------------------
-#!/usr/bin/python
-# デフォルトの文字コード 変更
-# -*- coding: utf-8 -*-
+# Licence:     SDS10005
+# -----------------------------------------------------------------------------
 
 # モジュールインポート
 import judgesound as js
@@ -26,8 +25,9 @@ js = js.JudgeSound()
 js.OkBeep()
 js.NgBeep()
 
+
 def main():
     pass
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

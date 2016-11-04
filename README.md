@@ -1,3 +1,3 @@
-# Play sound
+# Play beep sound
 
 ## !!!: Windows only
