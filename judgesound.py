@@ -41,13 +41,10 @@ class JudgeSound:
         """ OK判定音 出力 """
         try:
             if os.name == "nt":
-                print("Windows machine")
                 winsound.Beep(2000, 1000)
             elif sys.platform == "darwin":
-                print("Mac machine")
                 os.system('say "OK"')
             elif sys.platform == "linux2":
-                print("Linux machine")
                 print("\a")
             print("OK!")
             print("")
@@ -61,14 +58,11 @@ class JudgeSound:
             if sys.platform != "darwin":
                 for times in range(2):
                     if os.name == "nt":
-                        print("Windows machine")
                         winsound.Beep(2000, 500)
                     elif os.name == "posix":
-                        print("Linux machine")
                         print("\a")
                     time.sleep(0.1)
             elif sys.platform == "darwin":
-                print("Mac machine")
                 os.system('say "NG"')
             print("NG!")
             print("")
