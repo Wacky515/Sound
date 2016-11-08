@@ -28,6 +28,15 @@ sys.setdefaultencoding("utf-8")
 
 class JudgeSound:
     """ OK/NG判定音 出力 """
+    def __init__(self):
+        if sys.platform == "linux2":
+            print("Linux machine")
+        elif sys.platform == "darwin":
+            print("Mac machine")
+        elif os.name == "nt":
+            print("Windows machine")
+        print("")
+
     def beep_ok(self):
         """ OK判定音 出力 """
         try:
