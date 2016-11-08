@@ -22,8 +22,8 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 js = js.JudgeSound()
-js.OkBeep()
-js.NgBeep()
+js.beep_ok()
+js.beep_ng()
 
 
 def main():
