@@ -36,7 +36,8 @@ class JudgeSound:
             elif sys.platform == "darwin":
                 os.system('say "OK"')
             elif sys.platform == "linux2":
-                print("\a")
+                # print("\a")
+                pass
             print("OK!")
             print("")
         except:
