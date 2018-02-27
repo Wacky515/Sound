@@ -19,11 +19,14 @@ import time
 if os.name == "nt":
     import winsound
 
-# sysモジュール リロード
-reload(sys)
+# Python3用
+import importlib
 
+# sysモジュール リロード
+if sys.version_info.major == 2:
+    reload(sys)
 # デフォルトの文字コード 出力
-sys.setdefaultencoding("utf-8")
+    sys.setdefaultencoding("utf-8")
 
 
 class JudgeSound:
