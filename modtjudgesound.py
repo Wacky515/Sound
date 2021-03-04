@@ -6,22 +6,26 @@
 #
 # Author:      Kilo11
 #
-# Created:     01/04/2016
+# Created:     2016/04/01
+# Last Change: 2021/03/04 11:42:09.
 # Copyright:   (c) SkyDog 2016
 # Licence:     SDS10005
 # -----------------------------------------------------------------------------
+""" OK/NG音声出力 処理 GUI """
 
 # モジュールインポート
 import sys
 import judgesound as js
 
-# Python3用
-import importlib
+# Python3 用インポート
+if sys.version_info.major == 3:
+    import importlib
 
-# sysモジュール リロード
+# Python2 用設定
 if sys.version_info.major == 2:
+    # sysモジュール リロード
     reload(sys)
-# デフォルトの文字コード 出力
+    # デフォルトの文字コード 出力
     sys.setdefaultencoding("utf-8")
 
 

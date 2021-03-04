@@ -7,10 +7,11 @@
 # Author:      Kilo11
 #
 # Created:     2016/03/24
-# Last Change: 2021/03/04 10:42:19.
+# Last Change: 2021/03/04 11:42:22.
 # Copyright:   (c) SkyDog 2016
 # Licence:     SDS10004
 # -----------------------------------------------------------------------------
+""" OK/NG音声出力 処理 """
 
 # モジュールインポート
 import os
@@ -36,28 +37,28 @@ class JudgeSound:
     """ OK/NG判定音 出力 """
     def __init__(self):
         if sys.platform == "darwin":
-            print("Mac machine")
+            print(">> Mac machine")
         elif sys.platform == "linux2":
-            print("Linux machine")
+            print(">> Linux machine")
         elif os.name == "nt":
-            print("Windows machine")
-        print("")
+            print(">> Windows machine")
+        # print("")
 
     def beep_ok(self):
         """ OK判定音 出力 """
         try:
             if sys.platform == "darwin":
-                os.system('say "OK"')
+                os.system('>> say "OK"')
             elif sys.platform == "linux2":
                 # print("\a")
                 pass
             elif os.name == "nt":
                 winsound.Beep(2000, 1000)
-            print("OK!")
-            print("")
+            print(">> OK!")
+            # print("")
         except:
-            print("Sound error(OK)")
-            print("")
+            print(">> Sound error(OK)")
+            # print("")
 
     def beep_ng(self):
         """ NG判定音 出力 """
@@ -70,12 +71,12 @@ class JudgeSound:
                         print("\a")
                     time.sleep(0.1)
             else:
-                os.system('say "NG"')
-            print("NG!")
-            print("")
+                os.system('>> say "NG"')
+            print(">> NG!")
+            # print("")
         except:
-            print("Sound error(NG)")
-            print("")
+            print(">> Sound error(NG)")
+            # print("")
 
 
 def main():
