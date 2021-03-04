@@ -1,14 +1,4 @@
-*.un~
-*.*~
-*.swp
-*.pyc
-*.swo
-*.sw*
-
-./
-old/
-!*.py
-!*.txt
-!*.md
+# Create:      2016/08/19 **:**:**
+# Last Change: 2021/03/04 10:23:11.
 
 LogImage/
