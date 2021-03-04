@@ -1,0 +1,11 @@
+# Create:      2021/03/04 17:21:49
+# Last Change: 2021/03/04 17:23:58.
+
+*.spec
+*.toc
+*.zip
+
+build/
+dist/
+
+__pycache__/
