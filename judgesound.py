@@ -7,7 +7,7 @@
 # Author:      Kilo11
 #
 # Created:     2016/03/24
-# Last Change: 2021/03/04 15:49:22.
+# Last Change: 2021/03/05 10:06:35.
 # Copyright:   (c) SkyDog 2016
 # Licence:     SDS10004
 # -----------------------------------------------------------------------------
@@ -57,7 +57,7 @@ class JudgeSound:
             print(">> OK!")
             # print("")
         except FailSoundOk:
-            print(">> Sound error(OK)")
+            print(">> SOUND ERROR[OK SOUND]")
             # print("")
 
     def beep_ng(self):
@@ -75,7 +75,7 @@ class JudgeSound:
             print(">> NG!")
             # print("")
         except FailSoundNg:
-            print(">> Sound error(NG)")
+            print(">> SOUND ERROR[OK SOUND]")
             # print("")
 
 
