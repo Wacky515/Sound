@@ -7,7 +7,7 @@
 # Author:      Kilo11
 #
 # Created:     2016/04/01
-# Last Change: 2021/03/04 11:42:09.
+# Last Change: 2021/03/11 13:40:41.
 # Copyright:   (c) SkyDog 2016
 # Licence:     SDS10005
 # -----------------------------------------------------------------------------
@@ -15,16 +15,13 @@
 
 # モジュールインポート
 import sys
+import importlib
 import judgesound as js
-
-# Python3 用インポート
-if sys.version_info.major == 3:
-    import importlib
 
 # Python2 用設定
 if sys.version_info.major == 2:
     # sysモジュール リロード
-    reload(sys)
+    importlib.reload(sys)
     # デフォルトの文字コード 出力
     sys.setdefaultencoding("utf-8")
 
@@ -36,6 +33,7 @@ js.beep_ng()
 
 def main():
     pass
+
 
 if __name__ == "__main__":
     main()

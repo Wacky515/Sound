@@ -7,7 +7,7 @@
 # Author:      Kilo11
 #
 # Created:     2016/03/24
-# Last Change: 2021/03/09 16:57:51.
+# Last Change: 2021/03/11 13:56:50.
 # Copyright:   (c) SkyDog 2016
 # Licence:     SDS10004
 # -----------------------------------------------------------------------------
@@ -17,20 +17,25 @@
 import os
 import sys
 import time
+import importlib
 
 if os.name == "nt":
     import winsound
 
-# Python3 用インポート
-if sys.version_info.major == 3:
-    # import importlib
-
 # Python2 用設定
 if sys.version_info.major == 2:
     # sysモジュール リロード
-    reload(sys)
+    importlib.reload(sys)
     # デフォルトの文字コード 出力
     sys.setdefaultencoding("utf-8")
+
+
+def FailSoundOk():
+    pass
+
+
+def FailSoundNg():
+    pass
 
 
 class JudgeSound:
