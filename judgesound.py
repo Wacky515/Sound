@@ -7,7 +7,7 @@
 # Author:      Kilo11
 #
 # Created:     2016/03/24
-# Last Change: 2021/03/12 14:32:58.
+# Last Change: 2021/03/15 00:09:37.
 # Copyright:   (c) SkyDog 2016
 # Licence:     SDS10004
 # -----------------------------------------------------------------------------
@@ -42,7 +42,7 @@ class JudgeSound:
     """ OK/NG判定音 出力 """
 
     def __init__(self):
-        if sys.platform == "darwin":
+        if sys.platform == "Darwin":
             print(">> Mac machine")
         elif sys.platform == "linux2":
             print(">> Linux machine")
@@ -55,8 +55,9 @@ class JudgeSound:
         try:
             print(">> OK!")
             # print("")
-            if sys.platform == "darwin":
-                os.system('>> say "OK"')
+            if sys.platform == "Darwin":
+                print(">> OK [Mac]")
+                # os.system('>> say "OK"')
             elif sys.platform == "linux2":
                 # print("\a")
                 pass
@@ -69,7 +70,7 @@ class JudgeSound:
     def beep_ng(self):
         """ NG判定音 出力 """
         try:
-            if sys.platform != "darwin":
+            if sys.platform != "Darwin":
                 for times in range(2):
                     if os.name == "nt":
                         winsound.Beep(2000, 500)
@@ -77,7 +78,8 @@ class JudgeSound:
                         print("\a")
                     time.sleep(0.1)
             else:
-                os.system('>> say "NG"')
+                print(">> NG [Mac]")
+                # os.system('>> say "NG"')
             print(">> NG!")
             # print("")
         except OSError:
