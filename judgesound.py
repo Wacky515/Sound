@@ -7,7 +7,7 @@
 # Author:      Kilo11
 #
 # Created:     2016/03/24
-# Last Change: 2021/03/15 00:09:37.
+# Last Change: 2021/03/16 17:19:43.
 # Copyright:   (c) SkyDog 2016
 # Licence:     SDS10004
 # -----------------------------------------------------------------------------
@@ -30,14 +30,6 @@ if sys.version_info.major == 2:
     sys.setdefaultencoding("utf-8")
 
 
-def FailSoundOk():
-    pass
-
-
-def FailSoundNg():
-    pass
-
-
 class JudgeSound:
     """ OK/NG判定音 出力 """
 
@@ -48,43 +40,40 @@ class JudgeSound:
             print(">> Linux machine")
         elif os.name == "nt":
             print(">> Windows machine")
-        # print("")
 
     def beep_ok(self):
         """ OK判定音 出力 """
         try:
-            print(">> OK!")
-            # print("")
             if sys.platform == "Darwin":
                 print(">> OK [Mac]")
                 # os.system('>> say "OK"')
             elif sys.platform == "linux2":
+                print(">> OK [Linux]")
                 # print("\a")
-                pass
             elif os.name == "nt":
+                print(">> OK [Windows]")
                 winsound.Beep(2000, 1000)
         except OSError:
             print(">> SOUND ERROR[OK SOUND]")
-            # print("")
+        finally:
+            time.sleep(0.1)
 
     def beep_ng(self):
         """ NG判定音 出力 """
         try:
-            if sys.platform != "Darwin":
-                for times in range(2):
-                    if os.name == "nt":
-                        winsound.Beep(2000, 500)
-                    elif os.name == "posix":
-                        print("\a")
-                    time.sleep(0.1)
-            else:
+            if sys.platform == "Darwin":
                 print(">> NG [Mac]")
                 # os.system('>> say "NG"')
-            print(">> NG!")
-            # print("")
+            elif sys.platform == "linux2":
+                print(">> NG [Linux]")
+                # print("\a")
+            if os.name == "nt":
+                print(">> NG [Windows]")
+                winsound.Beep(2000, 500)
         except OSError:
             print(">> SOUND ERROR[OK SOUND]")
-            # print("")
+        finally:
+            time.sleep(0.1)
 
 
 def main():
